@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>动物森友会 - 大头菜价格预言家</title>
+  <meta name="description" content="动物森友会 - 大头菜价格预言家">
+  <meta name="author" content="Mike Bryant">
+
+  <link rel="stylesheet" href="/tpp/css/styles.css">
+</head>
+
+<body>
+
+  <div class="dialog-box">
+    <h2 class="dialog-box__name">曹卖</h2>
+    <p>你好，欢迎使用 <b>TPP（Turnip Prices Prophet）大头菜价格预言家</b> 应用。</p>
+    <p>这款应用可以帮助你跟踪每日的大头菜价格，在你手动输入价格后，本应用可以<b>神奇地</b>预言当周剩余时间段的大头菜价格。</p>
+  </div>
+
+  <div class="nook-phone">
+    <h1>大头菜价格预言家</h1>
+
+    <div>
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.6" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.4)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.2)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+      </svg>
+    </div>
+
+    <div class="nook-phone-center">
+
+
+
+      <form class="input__form">
+        <div class="form__row">
+          <h6>初次购买</h6>
+          <div class="input__group">
+            <label>这是你第一次在自己岛上购买大头菜吗？<i>（这会影响价格走向模式，并且和曹卖第一次登场与否没有关系）</i></label>
+            <div class="input__radio-buttons">
+              <input type="radio" id="first-time-radio-no" name="first-time" value="false" checked>
+              <label for="first-time-radio-no">否</label>
+              <input type="radio" id="first-time-radio-yes" name="first-time" value="true">
+              <label for="first-time-radio-yes">是</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form__row">
+          <h6>上周模式</h6>
+          <div class="input__group">
+            <label for="">上周自己岛上的价格模式是哪一种？<i>（这会影响价格走向模式）</i></label>
+            <div class="input__radio-buttons">
+              <input type="radio" id="pattern-radio-unknown" name="pattern" value="-1" checked>
+              <label for="pattern-radio-unknown">不知道</label>
+              <input type="radio" id="pattern-radio-fluctuating" name="pattern" value="0">
+              <label for="pattern-radio-fluctuating">波动型</label>
+              <input type="radio" id="pattern-radio-small-spike" name="pattern" value="3">
+              <label for="pattern-radio-small-spike">小涨型</label>
+              <input type="radio" id="pattern-radio-large-spike" name="pattern" value="1">
+              <label for="pattern-radio-large-spike">大涨型</label>
+              <input type="radio" id="pattern-radio-decreasing" name="pattern" value="2">
+              <label for="pattern-radio-decreasing">递减型</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form__row">
+          <h6>周日</h6>
+          <div class="input__group">
+            <label>这周自己岛上的大头菜价格是？<i>（如果这是你第一次购买，本项无需填写）</i></label>
+            <input type="number" pattern="\d*" id="buy" placeholder="..." />
+
+          </div>
+        </div>
+
+        <i>上午 - 8:00 至 11:59</i>
+        <i>下午 - 12:00 至 22:00</i>
+        <div class="form__flex-wrap">
+          <div class="form__row">
+            <h6>周一</h6>
+            <div class="input__group">
+              <label for="sell_2">上午</label>
+              <input type="number" pattern="\d*" id="sell_2" placeholder="..." />
+            </div>
+            <div class="input__group">
+              <label for="sell_3">下午</label>
+              <input type="number" pattern="\d*" id="sell_3" placeholder="..." />
+            </div>
+          </div>
+
+          <div class="form__row">
+            <h6>周二</h6>
+            <div class="input__group">
+              <label for="sell_4">上午</label>
+              <input type="number" pattern="\d*" id="sell_4" placeholder="..." />
+            </div>
+            <div class="input__group">
+              <label for="sell_5">下午</label>
+              <input type="number" pattern="\d*" id="sell_5" placeholder="..." />
+            </div>
+          </div>
+
+          <div class="form__row">
+            <h6>周三</h6>
+            <div class="input__group">
+              <label for="sell_6">上午</label>
+              <input type="number" pattern="\d*" id="sell_6" placeholder="..." />
+            </div>
+            <div class="input__group">
+              <label for="sell_7">下午</label>
+              <input type="number" pattern="\d*" id="sell_7" placeholder="..." />
+            </div>
+          </div>
+
+          <div class="form__row">
+            <h6>周四</h6>
+            <div class="input__group">
+              <label for="sell_8">上午</label>
+              <input type="number" pattern="\d*" id="sell_8" placeholder="..." />
+            </div>
+            <div class="input__group">
+              <label for="sell_9">下午</label>
+              <input type="number" pattern="\d*" id="sell_9" placeholder="..." />
+            </div>
+          </div>
+
+          <div class="form__row">
+            <h6>周五</h6>
+            <div class="input__group">
+              <label for="sell_10">上午</label>
+              <input type="number" pattern="\d*" id="sell_10" placeholder="..." />
+            </div>
+            <div class="input__group">
+              <label for="sell_11">下午</label>
+              <input type="number" pattern="\d*" id="sell_11" placeholder="..." />
+            </div>
+          </div>
+
+          <div class="form__row">
+            <h6>周六</h6>
+            <div class="input__group">
+              <label for="sell_12">上午</label>
+              <input type="number" pattern="\d*" id="sell_12" placeholder="..." />
+            </div>
+            <div class="input__group">
+              <label for="sell_13">下午</label>
+              <input type="number" pattern="\d*" id="sell_13" placeholder="..." />
+            </div>
+          </div>
+        </div>
+        <button type="button" id="reset" class="reset-button" name="action">
+          重置输入
+        </button>
+      </form>
+
+      <h2>预测结果</h2>
+
+      <div class="table-wrapper">
+        <table id="turnipTable">
+          <thead>
+            <tr>
+              <th valign="bottom">模式</th>
+              <th valign="bottom">几率(%)</th>
+              <th valign="bottom">周日</th>
+              <th colspan="2">
+                <div>周一</div>
+                <div>
+                  <span>上午</span>
+                  <span>下午</span>
+                </div>
+              </th>
+              <th colspan="2">
+                <div>周二</div>
+                <div>
+                  <span>上午</span>
+                  <span>下午</span>
+                </div>
+              </th>
+              <th colspan="2">
+                <div>
+                  <div>周三</div>
+                  <div>
+                    <span>上午</span>
+                    <span>下午</span>
+                  </div>
+                </div>
+              </th>
+              <th colspan="2">
+                <div>周四</div>
+                <div>
+                  <span>上午</span>
+                  <span>下午</span>
+                </div>
+              </th>
+              <th colspan="2">
+                <div>周五</div>
+                <div>
+                  <span>上午</span>
+                  <span>下午</span>
+                </div>
+              </th>
+              <th colspan="2">
+                <div>周六</div>
+                <div>
+                  <span>上午</span>
+                  <span>下午</span>
+                </div>
+              </th>
+              <th valign="bottom">保底价</th>
+              <th valign="bottom">理想价</th>
+            </tr>
+          </thead>
+          <tbody id="output"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="transform:rotate(180deg)">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.6" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.4)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.2)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+      </svg>
+    </div>
+
+  </div>
+
+  <div class="dialog-box">
+    <h2 class="dialog-box__name">曹卖</h2>
+    <p>在你输入大头菜价格后，本应用会计算并显示各种可能会出现在你岛上的价格模式。</p>
+    <p>本应用尚在开发中，并会不断改进！</p>
+  </div>
+
+  <div class="dialog-box">
+    <h2 class="dialog-box__name">曹卖</h2>
+    <p>感谢 <a
+      href="https://twitter.com/_Ninji/status/1244818665851289602?s=20" target="_blank">Ninji's work</a> 指出 Nook 商店是如何报价的，
+      没有他（们）就没有本应用。
+    </p>
+    <p>
+      本应用开源在 <a
+        href="https://github.com/mikebryant/ac-nh-turnip-prices" target="_blank">Github</a>，简中译者：<a
+        href="https://github.com/Shy07" target="_blank">Shy07</a>。
+    </p>
+  </div>
+
+  <script src="/tpp/js/jquery-3.5.0.min.js"></script>
+  <script src="/tpp/js/translations.js"></script>
+  <script src="/tpp/js/predictions.js"></script>
+  <script src="/tpp/js/scripts.js"></script>
+</body>
+
+</html>
